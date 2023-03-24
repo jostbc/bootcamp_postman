@@ -61,7 +61,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Jose\",\r\n  \"lastName\": \"Sanchez\",\r\n  \"dni\": \"78902930\",\r\n  \"email\": \"josesa@correo.com\",\r\n  \"telephone\": \"990987394\"\r\n}",
+							"raw": "{\r\n  \"name\": \"Anthony\",\r\n  \"lastName\": \"Vera\",\r\n  \"dni\": \"78885441\",\r\n  \"email\": \"antve@correo.com\",\r\n  \"telephone\": \"956325485\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -189,34 +189,6 @@
 					"response": []
 				},
 				{
-					"name": "createCompany Copy",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"businessName\": \"Panalex\",\r\n  \"ruc\": \"10657839200\",\r\n  \"email\": \"contacto@panalex.com\",\r\n  \"telephone\": \"782392\",\r\n  \"headlines\": \r\n      [\r\n          {\r\n            \"name\": \"Luis\",\r\n            \"lastName\": \"Suarez\",\r\n            \"dni\": \"14928372\",\r\n            \"email\": \"luisu@panalex.com\",\r\n            \"telephone\": \"942314752\"\r\n          }\r\n      ],\r\n  \"signatories\": \r\n      []\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8089/company",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8089",
-							"path": [
-								"company"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "updateCompany",
 					"request": {
 						"method": "PUT",
@@ -301,7 +273,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"productType\": \"AHORRO\",\r\n  \"productId\": \"1\",\r\n  \"customerId\": \"1\",\r\n  \"transactionType\": \"RETIRO\",\r\n  \"amount\": 500,\r\n  \"transactionDate\": \"15-03-2023\"\r\n}",
+							"raw": "{\r\n  \"productType\": \"AHORRO\",\r\n  \"productId\": \"1\",\r\n  \"customerId\": \"641cc3baacab62077072ae1f\",\r\n  \"transactionType\": \"DEPOSITO\",\r\n  \"amount\": 100,\r\n  \"transactionDate\": \"23-03-2023\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -777,7 +749,7 @@
 							"variable": [
 								{
 									"key": "accountId",
-									"value": "641b4062b620915c911bff64"
+									"value": "6419bf7c1c2fe17ed129be3e"
 								}
 							]
 						}
@@ -839,13 +811,13 @@
 					"response": []
 				},
 				{
-					"name": "createAccount",
+					"name": "createAccountPerson",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"typeAccount\": \"AHORROS\",\r\n    \"typeCustomer\": \"PERSONAL\",\r\n    \"customerId\": \"6413619bf92d28ec5a2e104e1\",\r\n    \"comMaintenance\": 15,\r\n    \"movementDate\": \"25-05\",\r\n    \"monthlyMovements\": 0,\r\n    \"amount\": 5000.0,\r\n    \"createDate\": \"2023-03-17T05:00:00.000+00:00\",\r\n    \"status\": 1\r\n}",
+							"raw": "{\r\n    \"typeAccount\": \"AHORROS\",\r\n    \"typeCustomer\": \"PERSONAL\",\r\n    \"customerId\": \"641cc3baacab62077072ae1f\",\r\n    \"comMaintenance\": 0,\r\n    \"movementDate\": \"\",\r\n    \"monthlyMovements\": 10,\r\n    \"amount\": 100.0,\r\n    \"createDate\": \"23-03-2023\",\r\n    \"status\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -862,6 +834,93 @@
 							"path": [
 								"account",
 								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAccountCompany",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"typeAccount\": \"CUENTA_CORRIENTE\",\r\n    \"typeCustomer\": \"COMPANY\",\r\n    \"customerId\": \"6412444d6ada5c388a54248e\",\r\n    \"comMaintenance\": 15,\r\n    \"movementDate\": \"22-03\",\r\n    \"monthlyMovements\": 0,\r\n    \"amount\": 5000.0,\r\n    \"createDate\": \"2023-03-17T05:00:00.000+00:00\",\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/account/company",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"account",
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "depositAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"6419bf7c1c2fe17ed129be3e\",\r\n  \"typeAccount\": \"AHORRO\",\r\n  \"typeCustomer\": \"PERSONAL\",\r\n  \"customerId\": \"6413619bf92d28ec5a2e104e\",\r\n  \"movementDate\": \"15-03-2023\",\r\n  \"amount\": 5000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/account/deposit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"account",
+								"deposit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "withdrawAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"6419bf7c1c2fe17ed129be3e\",\r\n  \"typeAccount\": \"AHORRO\",\r\n  \"typeCustomer\": \"PERSONAL\",\r\n  \"customerId\": \"6413619bf92d28ec5a2e104e\",\r\n  \"movementDate\": \"15-03-2023\",\r\n  \"amount\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/account/withdraw",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"account",
+								"withdraw"
 							]
 						}
 					},
