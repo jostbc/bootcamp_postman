@@ -1,0 +1,933 @@
+{
+	"info": {
+		"_postman_id": "69fad271-8c7f-433d-8a33-915f083a5729",
+		"name": "Bootcamp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20895183"
+	},
+	"item": [
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "getAll-Transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-transactions}}/transaction",
+							"host": [
+								"{{url-transactions}}"
+							],
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTransactionById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-transactions}}/transaction/:id",
+							"host": [
+								"{{url-transactions}}"
+							],
+							"path": [
+								"transaction",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6411ddbec7ca684048524a4e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createTransaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productType\": \"AHORRO\",\r\n  \"productId\": \"1\",\r\n  \"customerId\": \"1\",\r\n  \"transactionType\": \"RETIRO\",\r\n  \"amount\": 500,\r\n  \"transactionDate\": \"15-03-2023\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-transactions}}/transaction",
+							"host": [
+								"{{url-transactions}}"
+							],
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTransaction",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"6412036c190aaa32f0f4022a\",\r\n    \"productType\": \"AHORRO\",\r\n    \"productId\": \"2\",\r\n    \"customerId\": \"2\",\r\n    \"transactionType\": \"DEPOSITO\",\r\n    \"amount\": 500.0,\r\n    \"transactionDate\": \"2023-03-10T00:00:00.000+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-transactions}}/transaction",
+							"host": [
+								"{{url-transactions}}"
+							],
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTransactionByCustomerId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-transactions}}/transaction/customer/:id",
+							"host": [
+								"{{url-transactions}}"
+							],
+							"path": [
+								"transaction",
+								"customer",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTransactionByProductId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-transactions}}/transaction/product/:id",
+							"host": [
+								"{{url-transactions}}"
+							],
+							"path": [
+								"transaction",
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTransaction-DEPRECATED",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url-transactions}}/transaction/:id",
+							"host": [
+								"{{url-transactions}}"
+							],
+							"path": [
+								"transaction",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6412035c190aaa32f0f40229"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customers",
+			"item": [
+				{
+					"name": "Person",
+					"item": [
+						{
+							"name": "getAll-Person",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url-customers}}/person",
+									"host": [
+										"{{url-customers}}"
+									],
+									"path": [
+										"person"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getPersonById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url-customers}}/person/:id",
+									"host": [
+										"{{url-customers}}"
+									],
+									"path": [
+										"person",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6413619bf92d28ec5a2e104e"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPerson",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Jose\",\r\n  \"lastName\": \"Sanchez\",\r\n  \"dni\": \"78902930\",\r\n  \"email\": \"josesa@correo.com\",\r\n  \"telephone\": \"990987394\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url-customers}}/person",
+									"host": [
+										"{{url-customers}}"
+									],
+									"path": [
+										"person"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updatePerson",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"641366972a36157df60fb7c5\",\r\n  \"name\": \"Jose\",\r\n  \"lastName\": \"Sanchez\",\r\n  \"dni\": \"78902930\",\r\n  \"email\": \"josesa@correo.com\",\r\n  \"telephone\": \"990987394\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url-customers}}/person",
+									"host": [
+										"{{url-customers}}"
+									],
+									"path": [
+										"person"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deletePerson",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url-customers}}/person/:id",
+									"host": [
+										"{{url-customers}}"
+									],
+									"path": [
+										"person",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "640e74a7a93bc8249b5b75ba"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Company",
+					"item": [
+						{
+							"name": "getAll-Company",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url-customers}}/company",
+									"host": [
+										"{{url-customers}}"
+									],
+									"path": [
+										"company"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getCompanyById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url-customers}}/company/:id",
+									"host": [
+										"{{url-customers}}"
+									],
+									"path": [
+										"company",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "64133e1be3c8340ac6b95ac9"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createCompany",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"businessName\": \"Bilaural\",\r\n  \"ruc\": \"2045878960\",\r\n  \"email\": \"contacto@Bilaural.com\",\r\n  \"telephone\": \"365985\",\r\n  \"holders\": \r\n      [\r\n          {\r\n            \"name\": \"Charlie\",\r\n            \"lastName\": \"Harper\",\r\n            \"dni\": \"14258762\",\r\n            \"email\": \"chaha@Bilaural.com\",\r\n            \"telephone\": \"986596336\"\r\n          }\r\n      ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url-customers}}/company",
+									"host": [
+										"{{url-customers}}"
+									],
+									"path": [
+										"company"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createCompany Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"businessName\": \"Panalex\",\r\n  \"ruc\": \"10657839200\",\r\n  \"email\": \"contacto@panalex.com\",\r\n  \"telephone\": \"782392\",\r\n  \"headlines\": \r\n      [\r\n          {\r\n            \"name\": \"Luis\",\r\n            \"lastName\": \"Suarez\",\r\n            \"dni\": \"14928372\",\r\n            \"email\": \"luisu@panalex.com\",\r\n            \"telephone\": \"942314752\"\r\n          }\r\n      ],\r\n  \"signatories\": \r\n      []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url-customers}}/company",
+									"host": [
+										"{{url-customers}}"
+									],
+									"path": [
+										"company"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateCompany",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"id\": \"64133e1be3c8340ac6b95ac9\",\r\n  \"businessName\": \"Bilaural\",\r\n  \"ruc\": \"2045878960\",\r\n  \"email\": \"contacto@Bilaural.com\",\r\n  \"telephone\": \"365985\",\r\n  \"holders\": \r\n      [\r\n          {\r\n            \"name\": \"Charlie\",\r\n            \"lastName\": \"Harper\",\r\n            \"dni\": \"14258762\",\r\n            \"email\": \"chaha@Bilaural.com\",\r\n            \"telephone\": \"986596336\"\r\n          }\r\n      ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url-customers}}/company",
+									"host": [
+										"{{url-customers}}"
+									],
+									"path": [
+										"company"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteCompany",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url-customers}}/company/:id",
+									"host": [
+										"{{url-customers}}"
+									],
+									"path": [
+										"company",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "CreditCard",
+					"item": [
+						{
+							"name": "getAll-CreditCard",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url-credits}}/creditCard",
+									"host": [
+										"{{url-credits}}"
+									],
+									"path": [
+										"creditCard"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getCreditCardById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url-credits}}/creditCard/:creditCardId",
+									"host": [
+										"{{url-credits}}"
+									],
+									"path": [
+										"creditCard",
+										":creditCardId"
+									],
+									"variable": [
+										{
+											"key": "creditCardId",
+											"value": "6413b885f4e6d642be81d123"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createCreditCard",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerId\": \"6413619bf92d28ec5a2e104e\",\r\n  \"creditLine\": 500.0,\r\n  \"creditCardAccount\": \"1\",\r\n  \"creditCardId\": \"1111-2222-3333-4444\",\r\n  \"lineAvailable\": 500.0,\r\n  \"feeMonth\": 0.0,\r\n  \"minimumAmount\": 0.0,\r\n  \"settlementAmount\": 0.0,\r\n  \"payDay\": \"2023-03-15T05:00:00.000+00:00\",\r\n  \"createDate\": \"2023-03-16T05:00:00.000+00:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url-credits}}/creditCard",
+									"host": [
+										"{{url-credits}}"
+									],
+									"path": [
+										"creditCard"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateCreditCard",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"6413b885f4e6d642be81d123\",\r\n  \"customerId\": \"6413619bf92d28ec5a2e104e\",\r\n  \"creditLine\": 800.0,\r\n  \"creditCardAccount\": \"1\",\r\n  \"creditCardId\": \"1111-2222-3333-4444\",\r\n  \"lineAvailable\": 500.0,\r\n  \"feeMonth\": 0.0,\r\n  \"minimumAmount\": 0.0,\r\n  \"settlementAmount\": 0.0,\r\n  \"payDay\": \"2023-03-15T05:00:00.000+00:00\",\r\n  \"createDate\": \"2023-03-16T05:00:00.000+00:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url-credits}}/creditCard",
+									"host": [
+										"{{url-credits}}"
+									],
+									"path": [
+										"creditCard"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Credit",
+					"item": [
+						{
+							"name": "getAll-Credit",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url-credits}}/credit",
+									"host": [
+										"{{url-credits}}"
+									],
+									"path": [
+										"credit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getCreditById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url-credits}}/credit/:creditId",
+									"host": [
+										"{{url-credits}}"
+									],
+									"path": [
+										"credit",
+										":creditId"
+									],
+									"variable": [
+										{
+											"key": "creditId",
+											"value": "64148158a5eefb7615479cee"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createCredit",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customerId\": \"641363f0f92d28ec5a2e104f\",\r\n    \"customerType\": \"PERSONAL\",\r\n    \"totalAmount\": 1500.0,\r\n    \"amountFee\": 125.0,\r\n    \"quantityFee\": 12,\r\n    \"totalFee\": 12,\r\n    \"settlementAmount\": 1500.0,\r\n    \"payDay\": \"25-03-2023\",\r\n    \"createDate\": \"17-03-2023\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url-credits}}/credit",
+									"host": [
+										"{{url-credits}}"
+									],
+									"path": [
+										"credit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateCredit",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"64148158a5eefb7615479cee\",\r\n    \"customerId\": \"641363f0f92d28ec5a2e104f\",\r\n    \"customerType\": \"PERSONAL\",\r\n    \"totalAmount\": 1500.0,\r\n    \"amountFee\": 125.0,\r\n    \"quantityFee\": 12,\r\n    \"totalFee\": 12,\r\n    \"settlementAmount\": 1500.0,\r\n    \"payDay\": \"25-03-2023\",\r\n    \"createDate\": \"17-03-2023\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url-credits}}/credit",
+									"host": [
+										"{{url-credits}}"
+									],
+									"path": [
+										"credit"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "getAll-Account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-accounts}}/account",
+							"host": [
+								"{{url-accounts}}"
+							],
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAccountById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-accounts}}/account/:accountId",
+							"host": [
+								"{{url-accounts}}"
+							],
+							"path": [
+								"account",
+								":accountId"
+							],
+							"variable": [
+								{
+									"key": "accountId",
+									"value": "6419bf7c1c2fe17ed129be3e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAccountByCustomerId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-accounts}}/account/customer/:customerId",
+							"host": [
+								"{{url-accounts}}"
+							],
+							"path": [
+								"account",
+								"customer",
+								":customerId"
+							],
+							"variable": [
+								{
+									"key": "customerId",
+									"value": "6419bf7c1c2fe17ed129be3e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAccountByProductId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-accounts}}/account/typeAccount/:typeAccount",
+							"host": [
+								"{{url-accounts}}"
+							],
+							"path": [
+								"account",
+								"typeAccount",
+								":typeAccount"
+							],
+							"variable": [
+								{
+									"key": "typeAccount",
+									"value": "AHORROS"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAccountPerson",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"typeAccount\": \"AHORROS\",\r\n    \"typeCustomer\": \"PERSONAL\",\r\n    \"customerId\": \"641cc3baacab62077072ae1f\",\r\n    \"comMaintenance\": 0,\r\n    \"movementDate\": \"\",\r\n    \"monthlyMovements\": 10,\r\n    \"amount\": 100.0,\r\n    \"createDate\": \"23-03-2023\",\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-accounts}}/account/person",
+							"host": [
+								"{{url-accounts}}"
+							],
+							"path": [
+								"account",
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAccountCompany",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"typeAccount\": \"CUENTA_CORRIENTE\",\r\n    \"typeCustomer\": \"COMPANY\",\r\n    \"customerId\": \"6412444d6ada5c388a54248e\",\r\n    \"comMaintenance\": 15,\r\n    \"movementDate\": \"22-03\",\r\n    \"monthlyMovements\": 0,\r\n    \"amount\": 5000.0,\r\n    \"createDate\": \"2023-03-17T05:00:00.000+00:00\",\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-accounts}}/account/company",
+							"host": [
+								"{{url-accounts}}"
+							],
+							"path": [
+								"account",
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "depositAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"6419bf7c1c2fe17ed129be3e\",\r\n  \"typeAccount\": \"AHORROS\",\r\n  \"typeCustomer\": \"PERSONAL\",\r\n  \"customerId\": \"6413619bf92d28ec5a2e104e\",\r\n  \"movementDate\": \"15-03-2023\",\r\n  \"amount\": 105\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-accounts}}/account/deposit",
+							"host": [
+								"{{url-accounts}}"
+							],
+							"path": [
+								"account",
+								"deposit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "withdrawAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"6419bf7c1c2fe17ed129be3e\",\r\n  \"typeAccount\": \"AHORROS\",\r\n  \"typeCustomer\": \"PERSONAL\",\r\n  \"customerId\": \"6413619bf92d28ec5a2e104e\",\r\n  \"movementDate\": \"15-03-2023\",\r\n  \"amount\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-accounts}}/account/withdraw",
+							"host": [
+								"{{url-accounts}}"
+							],
+							"path": [
+								"account",
+								"withdraw"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "interbankTransfer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"6419bf7c1c2fe17ed129be3e\",\r\n  \"customerId\": \"6413619bf92d28ec5a2e104e\",\r\n  \"customerIdTransfer\": \"641cc3baacab62077072ae1f\",\r\n  \"accountIdTransfer\": \"6429cd81ac92d00faa4553a2\",\r\n  \"amount\": 50,\r\n  \"movementDate\": \"15-03-2023\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-accounts}}/account/transfer",
+							"host": [
+								"{{url-accounts}}"
+							],
+							"path": [
+								"account",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAccount",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"641b4062b620915c911bff64\",\r\n    \"typeAccount\": \"AHORROS\",\r\n    \"typeCustomer\": \"PERSONAL\",\r\n    \"customerId\": \"6413619bf92d28ec5a2e104e1\",\r\n    \"comMaintenance\": 15,\r\n    \"movementDate\": \"25-05\",\r\n    \"monthlyMovements\": 0,\r\n    \"amount\": 1000.0,\r\n    \"createDate\": \"2023-03-17T05:00:00.000+00:00\",\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-accounts}}/account",
+							"host": [
+								"{{url-accounts}}"
+							],
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "restartMov",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-accounts}}/account/restartMov",
+							"host": [
+								"{{url-accounts}}"
+							],
+							"path": [
+								"account",
+								"restartMov"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
